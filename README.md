@@ -4,6 +4,8 @@ Plagio
 Progetto sul Plagio di articoli scientifici
 -------------------------------------------
 
+[![Gitter chat](https://badges.gitter.im/AvalZ/Plagio.png)](https://gitter.im/AvalZ/Plagio)
+
 ### Requisiti:
 1. Database MySQL con nome **plagio**
 2. *Utente* **plagio** con *password* **Plagio** e privilegi di lettura e scrittura sul Database
@@ -11,8 +13,8 @@ Progetto sul Plagio di articoli scientifici
   + **id** *int*, PK e AI
   + **frase** *TEXT*
   + **source** *TEXT*
-   
-  
+
+
 ### Primo avvio:
 *(Si suppone che il progetto si trovi all'indirizzo [http://localhost/Plagio/](http://localhost/Plagio/))*
 
