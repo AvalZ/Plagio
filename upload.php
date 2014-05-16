@@ -29,3 +29,5 @@ foreach ($tokenArray as $token) {
 
 // Sempre meglio chiudere la connessione
 mysqli_close($con);
+
+header("Location: admin.html");

@@ -5,16 +5,25 @@
 <html>
     <head>
         <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
     </head>
     <body>
-        <form action="ProcessAndSearch.php" method="POST">
-            <label>Inserisci l'url del testo che vuoi controllare</label>
-            <input type="text" name="url"/>
-            <input type="submit"/>
-        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" style="margin-top: 80px;">
+                    <form action="ProcessAndSearch.php" method="POST">
+                        <div class="form-group">
+                            <label for="urlInsert">Inserisci l'url del testo che vuoi controllare</label>
+                            <input type="text" name="url" class="form-control" id="urlInsert" placeholder="http://example.org/page.html"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="admin.html" style="margin-left: 10px;">Aggiungi un testo alla collezione</a>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-        <a href="admin.html">Aggiungi un testo alla collezione</a>
     </body>
 </html>

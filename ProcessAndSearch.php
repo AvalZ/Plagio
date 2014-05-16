@@ -69,16 +69,54 @@ $tokenArray = tokenize($url);
  * usare una template engine.
  * Twig è già incluso nel progetto (vendor/twig), si consiglia di usarlo.
  */
+echo '<html>'
+ . '<head>'
+ . '
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>'
+ . '</head>'
+ . '<body>'
+ . '<div class="container">';
+echo '<div class = "panel-group" id = "accordion">';
+$i = 1;
 foreach ($tokenArray as $token) {
-    // array_search ritorna la key del valore trovato, false se non trova niente
-    // TODO: Sostituire con array_keys per avere match multipli
+// array_search ritorna la key del valore trovato, false se non trova niente
+// TODO: Sostituire con array_keys per avere match multipli
     $match = array_search($token, $poolFrasi);
-    var_dump($match);
+    echo '<div class = "panel panel-default">
+<div class = "panel-heading"';
+    if ($match != false) {
+// Se trova un match crea un link alla pagina di origine
+        echo " style='background-color: rgba(255, 0, 0, 0.3);'";
+    } else {
+        echo " style='background-color: rgba(0, 255, 0, 0.3);'";
+    }
+    echo '>
+<h4 class = "panel-title">
+<a data-toggle = "collapse" data-parent = "#accordion" href = "#collapse' . $i . '">' . $token . '
+</a>
+</h4>
+</div>
+<div id = "collapse' . $i . '" class = "panel-collapse collapse in">
+<div class = "panel-body">';
     if ($match != false) {
         // Se trova un match crea un link alla pagina di origine
-        echo "<a href='$poolSource[$match]' alt='$poolSource[$match]'>$token.</a><br/>";
+        echo "<a href='$poolSource[$match]' alt='$poolSource[$match]'>$poolSource[$match]</a><br/>";
     } else {
-        echo $token . ".<br/>";
+        echo "Non ci sono corrispondenze.";
     }
-}
+    echo '</div>
+</div>';
 
+    echo '</div>';
+    $i++;
+}
+echo '</div>';
+echo '</div>';
+echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>';
+echo '<script src="js/bootstrap.js" type="text/javascript"></script>';
+echo '<script type="text/javascript">$(document).ready( function(){$(".collapse").collapse();});</script>';
+echo '</body>'
+ . '</html>';

@@ -5,16 +5,25 @@
 <html>
     <head>
         <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
     </head>
     <body>
-        <form action="upload.php" method="POST">
-            <label>Aggiungi un testo alla Pool di verifica</label>
-            <input type="text" name="url"/>
-            <input type="submit"/>
-        </form>
-        <a href="index.html">Inserisci il tuo testo</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" style="margin-top: 80px;">
+                    <form action="upload.php" method="POST">
+                        <div class="form-group">
+                            <label for="urlInsert">Aggiungi un testo alla pool di verifica</label>
+                            <input type="text" name="url" class="form-control" id="urlInsert" placeholder="http://example.org/tempPool/page.html"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="index.html" style="margin-left: 10px;">Torna alla pagina principale</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
