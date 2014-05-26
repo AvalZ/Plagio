@@ -1,0 +1,14 @@
+{
+    "name": "vendor/plagio",
+    "description": "Description of project Plagio.",
+    "authors": [
+        {
+            "name": "Andrea Valenza",
+            "email": "avalz@webwolf.co"
+        }
+    ],
+    "require": {
+        "twig/twig": "dev-master",
+        "twig/extensions": "dev-master"
+    }
+}
